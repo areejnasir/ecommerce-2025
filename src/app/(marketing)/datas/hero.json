@@ -1,0 +1,32 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "slide": 1,
+            "imageUrl": "/logo.png",
+            "alt": "logo",
+            "collection": "SUMMER COLLECTION",
+            "heading": "Fall - Winter Collection - 2030",
+            "para": "A specialist label creating luxury essentials. Ethically crafted with an unwavering commitment to exceptional quality."
+        },
+        {
+            "id": 1,
+            "slide": 2,
+            "imageUrl": "/logo.png",
+            "alt": "logo",
+            "collection": "WINTER COLLECTION",
+            "heading": "Fall - Winter Collection - 2040",
+            "para": "A specialist label creating luxury essentials. Ethically crafted with an unwavering commitment to exceptional quality."
+        },
+        {
+            "id": 2,
+            "slide": 3,
+            "imageUrl": "/logo.png",
+            "alt": "logo",
+            "collection": "SUMMER COLLECTION",
+            "heading": "Fall - Winter Collection - 2050",
+            "para": "A specialist label creating luxury essentials. Ethically crafted with an unwavering commitment to exceptional quality."
+        }
+
+    ]
+}

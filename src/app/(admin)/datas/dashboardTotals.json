@@ -1,0 +1,51 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "count": "$2,835.97",
+            "label": "Total Sales"
+        },
+        {
+            "id": 1,
+            "count": "$104.97",
+            "label": "Total Refunds"
+        },
+        {
+            "id": 2,
+            "count": "$7,877.20",
+            "label": "Net Sales"
+        }
+    ],
+    "advertising": [
+        {
+            "id": 0,
+            "count": "$2,835.97",
+            "label": "Total Sales",
+            "para": "test"
+        },
+        {
+            "id": 1,
+            "count": "$2,835.97",
+            "label": "Total Sales",
+            "para": "test"
+        },
+        {
+            "id": 2,
+            "count": "$2,835.97",
+            "label": "Total Sales",
+            "para": "test"
+        },
+        {
+            "id": 3,
+            "count": "$2,835.97",
+            "label": "Total Sales",
+            "para": "test"
+        },
+        {
+            "id": 4,
+            "count": "$2,835.97",
+            "label": "Total Sales",
+            "para": "test"
+        }
+    ]
+}

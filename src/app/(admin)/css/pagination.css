@@ -1,0 +1,21 @@
+.pagination {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.pagination li a {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.pagination .active a {
+    background-color: var(--secondary3);
+    color: white;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

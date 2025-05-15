@@ -1,0 +1,33 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "name": "HOME",
+            "url": "/home"
+        },
+        {
+            "id": 1,
+            "name": "SHOP",
+            "url": "/shop"
+        },
+        {
+            "id": 2,
+            "name": "PAGES",
+            "url": "/pages"
+        },
+        {
+            "id": 3,
+            "name": "BLOG",
+            "url": "/blog"
+        },
+        {
+            "id": 4,
+            "name": "CONTACTS",
+            "url": "/contacts"
+        }
+    ], 
+    "logo": {
+        "alt": "logo",
+        "href": "/logo.png"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "data": {
+      "home": {
+        "title": "Home page",
+        "meta": [
+          {
+            "name": "description",
+            "content": "Learn more about our company"
+          },
+          {
+            "name": "keywords",
+            "content": "seo, company, nextjs"
+          }
+        ]
+      },
+      "shop": {
+        "title": "Shop page",
+        "meta": [
+          {
+            "name": "description",
+            "content": "Welcome to our shop"
+          },
+          {
+            "name": "keywords",
+            "content": "shop, ecommerce, nextjs"
+          }
+        ]
+      }
+    }
+  }
+  

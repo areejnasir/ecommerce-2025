@@ -1,0 +1,14 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "name": "DASHBOARD",
+            "url": "/dashboard"
+        },
+        {
+            "id": 1,
+            "name": "HOME SETTINGS",
+            "url": "/home-settings"
+        }
+    ]
+}

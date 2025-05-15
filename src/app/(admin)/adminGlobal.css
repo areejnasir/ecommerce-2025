@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f1eded;
+  --foreground: #323b66;
+  --primary: #d9d7d7;
+  --secondary: white;
+  --secondary2: #020202;
+  --secondary3: #e6373c;
+  --graybackground: #ebe7e7;
+  --darklinear: 34deg, black, #17181e, #323b66;
+  --containerwidth: calc(100% - 250px);
+  --tabletext: #858585
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: none !important;
+  transform: translateX(0px);
+}
+
+.sidebar {
+  transform: translateX(-100%);
+}
+
+.sidebar2 {
+  transform: translateX(0%) !important;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.chart-container>canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: start;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+td {
+  padding: 10px;
+  margin-top: 20px;
+  border-bottom: 1px solid rgb(218, 214, 214);
+  font-size: 14px;
+}
+
+
+@media screen and (max-width: 990px) {
+  .sidebar {
+    transform: translateX(-100%) !important;
+  }
+
+  .container {
+    transform: translateX(0);
+  }
+}
