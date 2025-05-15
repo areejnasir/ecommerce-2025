@@ -5,39 +5,55 @@ import DateFormate from "@/app/(admin)/component/DateFormate";
 import Pagination from "@/app/(admin)/component/Pagination";
 import SearchBar from "@/app/(admin)/component/SearchBar";
 import Limit from "@/app/(admin)/component/Limit";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 
 const Tables = ({ tableData }: any) => {
-    const [limitVal, setLimitVal] = useState(2);  // Items per page
-    const [currentPage, setCurrentPage] = useState(0);  // Current page
+    const [limitVal, setLimitVal] = useState(2);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [searchVal, setSearchVal] = useState("");
     const [paginatedData, setPaginatedData] = useState([]);
 
     const fullData = tableData?.data?.tableData || [];
 
-    // Reset to page 1 whenever the limit changes
     const handleLimitChange = (newLimit: number) => {
         setLimitVal(newLimit);
-        setCurrentPage(0);  // Reset to first page whenever limit changes
+        setCurrentPage(0);
     };
+
+    const handleChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+        setSearchVal(e.target.value);
+        setCurrentPage(0);
+    };
+
+    // ✅ Filter outside useEffect so it's accessible everywhere
+    const filteredData = fullData.filter((item: any) => {
+        const val = searchVal.toLowerCase();
+        return (
+            item?.text1?.toLowerCase()?.includes(val) ||
+            item?.text2?.toLowerCase()?.includes(val) ||
+            item?.text3?.toLowerCase()?.includes(val) ||
+            item?.text4?.toLowerCase()?.includes(val) ||
+            item?.text5?.toLowerCase()?.includes(val) ||
+            item?.text6?.toLowerCase()?.includes(val)
+        );
+    });
 
     useEffect(() => {
         const offset = currentPage * limitVal;
-        const paged = fullData.slice(offset, offset + limitVal);
+        const paged = filteredData.slice(offset, offset + limitVal);
         setPaginatedData(paged);
-    }, [currentPage, limitVal, fullData]);
+    }, [currentPage, limitVal, searchVal, fullData]); // filteredData is derived, no need to include
 
-    const pageCount = Math.ceil(fullData.length / limitVal);
+    const pageCount = Math.ceil(filteredData.length / limitVal);
+
 
     return (
         <div className="w-full h-full">
             <div className="w-full p-2 rounded-sm overflow-hidden flex justify-between">
-                {/* data limit */}
                 <Limit setLimitVal={handleLimitChange} />
-                {/* search bar */}
-                <SearchBar />
+                <SearchBar onChange={handleChange} />
             </div>
 
-            {/* table */}
             <table className="table-auto w-full">
                 <thead>
                     <tr>
@@ -62,7 +78,6 @@ const Tables = ({ tableData }: any) => {
                                         : item?.text4 === "New"
                                             ? "bg-[#0000ff1f] text-[blue]"
                                             : "bg-[#ffa5002b] text-[orange]"
-
                                     }`}>
                                     {item?.text4}
                                 </span>
@@ -75,8 +90,8 @@ const Tables = ({ tableData }: any) => {
                 </tbody>
             </table>
 
-            {/* pagination */}
-            {fullData.length > limitVal && (
+            {/* ✅ Use filteredData safely here now */}
+            {filteredData.length > limitVal && (
                 <Pagination
                     limitVal={limitVal}
                     pageCount={pageCount}
