@@ -25,7 +25,7 @@ const Tables = ({ tableData }: any) => {
         setCurrentPage(0);
     };
 
-    // ✅ Filter outside useEffect so it's accessible everywhere
+    // search
     const filteredData = fullData.filter((item: any) => {
         const val = searchVal.toLowerCase();
         return (
@@ -89,8 +89,7 @@ const Tables = ({ tableData }: any) => {
                     ))}
                 </tbody>
             </table>
-
-            {/* ✅ Use filteredData safely here now */}
+            {/* pagination */}
             {filteredData.length > limitVal && (
                 <Pagination
                     limitVal={limitVal}

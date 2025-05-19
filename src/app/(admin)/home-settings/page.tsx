@@ -16,7 +16,7 @@ const Home = () => {
 
     return <div className="w-full h-[100vh] flex justify-between">
         <SideBar navOpen={navOpen} onClick={handleClick} />
-        <div className={`${navOpen ? "container translate-x-0 lg:translate-x-[250px] md:translate-x-[250px] w-full lg:w-(--containerwidth) md:w-(--containerwidth) " : "w-full lg:w-full md:w-full md:translate-x-[0px] lg:translate-x-[0px]"} absolute top-19 transition duration-400 ease-in-out px-5`}>
+        <div className={`${navOpen ? "container translate-x-0 lg:translate-x-[250px] md:translate-x-[250px] w-full lg:w-(--containerwidth) md:w-(--containerwidth) " : "w-full lg:w-full md:w-full md:translate-x-[0px] lg:translate-x-[0px]"} absolute top-19 transition duration-400 ease-in-out p-5`}>
             <NavIcon onClick={handleClick} navOpen={navOpen} params={pathName} />
             {/* children */}
             <div className={`grid grid-flow-col grid-rows-2 lg:grid-rows-1 xl:grid-rows-1 gap-4 mt-2`}>
